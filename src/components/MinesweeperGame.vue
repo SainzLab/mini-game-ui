@@ -150,7 +150,7 @@ async function saveScore() {
   try {
     const playerName = prompt("Selamat! Masukkan nama Anda:", `Pemain-${Date.now().toString().slice(-4)}`);
     if (!playerName) return;
-    await axios.post('https://api.sainzlab.site/api/scores', {
+    await axios.post('https://api.sainzlab.my.id/api/scores', {
       player_name: playerName,
       game_name: 'Minesweeper',
       score: timeElapsed.value
@@ -162,7 +162,7 @@ async function saveScore() {
 async function fetchLeaderboard() {
   isLoading.value = true;
   try {
-    const response = await axios.get('https://api.sainzlab.site/api/scores/Minesweeper');
+    const response = await axios.get('https://api.sainzlab.my.id/api/scores/Minesweeper');
     leaderboard.value = response.data; 
   } catch (error) { console.error("Gagal mengambil leaderboard:", error); }
   finally { isLoading.value = false; }

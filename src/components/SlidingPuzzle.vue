@@ -67,7 +67,7 @@ async function saveScore() {
     const playerName = prompt("Puzzle Selesai! Masukkan nama Anda:", `Pemain-${Date.now().toString().slice(-4)}`);
     if (!playerName) return;
     
-    await axios.post('https://api.sainzlab.site/api/scores', {
+    await axios.post('https://api.sainzlab.my.id/api/scores', {
       player_name: playerName,
       game_name: 'Puzzle Geser',
       score: timeElapsed.value
@@ -81,7 +81,7 @@ async function saveScore() {
 async function fetchLeaderboard() {
   isLoading.value = true;
   try {
-    const response = await axios.get('https://api.sainzlab.site/api/scores/Puzzle Geser');
+    const response = await axios.get('https://api.sainzlab.my.id/api/scores/Puzzle Geser');
     
     leaderboard.value = response.data
       .sort((a, b) => a.score - b.score) 

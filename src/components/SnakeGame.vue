@@ -91,7 +91,7 @@ async function saveScore() {
     const playerName = prompt("Game Over! Masukkan nama Anda:", `Pemain-${Date.now().toString().slice(-4)}`);
     if (!playerName) return;
     
-    await axios.post('https://api.sainzlab.site/api/scores', {
+    await axios.post('https://api.sainzlab.my.id/api/scores', {
       player_name: playerName,
       game_name: 'Snake',
       score: score.value
@@ -105,7 +105,7 @@ async function saveScore() {
 async function fetchLeaderboard() {
   isLoading.value = true;
   try {
-    const response = await axios.get('https://api.sainzlab.site/api/scores/Snake');
+    const response = await axios.get('https://api.sainzlab.my.id/api/scores/Snake');
     leaderboard.value = response.data;
   } catch (error)
  {

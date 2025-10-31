@@ -198,7 +198,7 @@ async function saveScore() {
     const playerName = prompt("Game Over! Masukkan nama Anda untuk leaderboard:", `Player-${Date.now().toString().slice(-4)}`);
     if (!playerName) return;
     
-    await axios.post('https://api.sainzlab.site/api/scores', {
+    await axios.post('https://api.sainzlab.my.id/api/scores', {
       player_name: playerName,
       game_name: 'Tetris',
       score: score.value
@@ -213,7 +213,7 @@ async function saveScore() {
 async function fetchLeaderboard() {
   isLoading.value = true;
   try {
-    const response = await axios.get('https://api.sainzlab.site/api/scores/Tetris');
+    const response = await axios.get('https://api.sainzlab.my.id/api/scores/Tetris');
     leaderboard.value = response.data;
   } catch (error) {
     console.error("Gagal mengambil leaderboard Tetris:", error);
