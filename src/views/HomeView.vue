@@ -126,7 +126,7 @@ const betaGames = computed(() => games.value.filter(game => game.isBeta));
     </div>
 
     <footer class="footer">
-      <p>&copy; 2025 Muhammad Fazli M</p>
+      <p>&copy; 2026 Sainzlab | Muhammad Fazli M</p>
     </footer>
   </div>
 </template>
